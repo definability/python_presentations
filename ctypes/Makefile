@@ -1,2 +1,7 @@
+FLAGS=-shared
+COMPILE=gcc $(FLAGS)
+LIBRARIES=-I/usr/include/python3.4
+OUT=lib_setters.so
 all:
-	gcc -shared -fPIC -I/usr/include/python3.4 setters.c -o lib_setters.so
+	$(COMPILE) $(LIBRARIES) setters.c -o lib_setters.so
+	$(COMPILE) basics.c -o lib_basics.so
